@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FlavorActivity">
+
+    <TextView
+        android:id="@+id/flavor_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/flavor_title"
+        android:textAlignment="center"
+        android:textColor="#030303"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/flavor_sv_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/flavor_sv_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:verticalScrollbarPosition="right"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="@id/flavor_tv_title"
+        app:layout_constraintStart_toStartOf="@id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/flavor_tv_title">
+
+        <LinearLayout
+            android:id="@+id/main_rg_flavors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/flavor_cb_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_1" />
+
+            <TextView
+                android:id="@+id/flavor_tv_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_detail_1"
+                android:textAlignment="textEnd" />
+
+            <CheckBox
+                android:id="@+id/flavor_cb_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_2" />
+
+            <TextView
+                android:id="@+id/flavor_tv_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_detail_2"
+                android:textAlignment="textEnd" />
+
+            <CheckBox
+                android:id="@+id/flavor_cb_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_3" />
+
+            <TextView
+                android:id="@+id/flavor_tv_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_detail_3"
+                android:textAlignment="textEnd" />
+
+            <CheckBox
+                android:id="@+id/flavor_cb_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_4" />
+
+            <TextView
+                android:id="@+id/flavor_tv_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_detail_4"
+                android:textAlignment="textEnd" />
+
+            <CheckBox
+                android:id="@+id/flavor_cb_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_5" />
+
+            <TextView
+                android:id="@+id/flavor_tv_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_detail_5"
+                android:textAlignment="textEnd" />
+
+            <CheckBox
+                android:id="@+id/flavor_cb_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_6" />
+
+            <TextView
+                android:id="@+id/flavor_tv_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_detail_6"
+                android:textAlignment="textEnd" />
+
+            <CheckBox
+                android:id="@+id/flavor_cb_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_7" />
+
+            <TextView
+                android:id="@+id/flavor_tv_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_detail_7"
+                android:textAlignment="textEnd" />
+
+            <CheckBox
+                android:id="@+id/flavor_cb_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_8" />
+
+            <TextView
+                android:id="@+id/flavor_tv_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_detail_8"
+                android:textAlignment="textEnd" />
+
+            <CheckBox
+                android:id="@+id/flavor_cb_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_9" />
+
+            <TextView
+                android:id="@+id/flavor_tv_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/flavor_detail_9"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="412dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flavor_sv_container">
+
+        <Button
+            android:id="@+id/flavor_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_back" />
+
+        <Button
+            android:id="@+id/flavor_btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/btn_next" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

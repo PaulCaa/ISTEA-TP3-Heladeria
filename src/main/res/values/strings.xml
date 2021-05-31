@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Heladeria</string>
+    <string name="main_title">Elije tu Helado</string>
+    <string name="btn_back">Atrás</string>
+    <string name="btn_next">Siguiente</string>
+    <string name="price_zero">$ 0.0</string>
+    <string name="item_detail_cono">Cono (2 sabores)</string>
+    <string name="item_detail_cuarto">Vaso de 1/4 (3 sabores)</string>
+    <string name="item_detail_medio">Pote de 1/2 kg (3 sabores)</string>
+    <string name="item_detail_kilo">Pote de 1 kg (4 sabores)</string>
+    <string name="item_descript_img">imagen ilustrativa del helado seleccionado</string>
+    <string name="flavor_title">Selecciona los sabores</string>
+    <string name="flavor_1">Dulce de leche de la casa</string>
+    <string name="flavor_detail_1">Crema sabor dulce de leche con toques de dulce casero</string>
+    <string name="flavor_2">Chocolate semiamargo</string>
+    <string name="flavor_3">Frutilla a la crema</string>
+    <string name="flavor_4">Vainilla</string>
+    <string name="flavor_5">Sambayon</string>
+    <string name="flavor_6">Crema del cielo</string>
+    <string name="flavor_7">Banana split</string>
+    <string name="flavor_8">Tramontana</string>
+    <string name="flavor_9">Mouse de limón</string>
+    <string name="flavor_detail_2">Chocolate a la crema con pedacitos de Aguila</string>
+    <string name="flavor_detail_3">Crema de frutilla con pedacitos de frutillas</string>
+    <string name="flavor_detail_4">Crema sabor vainilla</string>
+    <string name="flavor_detail_5">El del abuelo</string>
+    <string name="flavor_detail_6">No lo pidas</string>
+    <string name="flavor_detail_7">Crema sabor banana con toques de dulce de leche</string>
+    <string name="flavor_detail_8">Crema con confites de chocolates y toques de dulce de leche</string>
+    <string name="flavor_detail_9">Para los que están empachados</string>
+    <string name="order_title">Resumen del Pedido  </string>
+    <string name="order_btn_finish">Finalizar</string>
+    <string name="order_btn_add">Agregar Producto</string>
+    <string name="order_total">Total:</string>
+</resources>

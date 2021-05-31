@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/main_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/main_title"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/main_rg_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_tv_title">
+
+        <RadioButton
+            android:id="@+id/main_rb_cono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/item_detail_cono"
+            android:textSize="14sp"
+            android:onClick="rbAction" />
+
+        <TextView
+            android:id="@+id/main_tv_cono_precio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/price_zero"
+            android:textAlignment="textEnd"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/main_rb_cuarto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/item_detail_cuarto"
+            android:onClick="rbAction" />
+
+        <TextView
+            android:id="@+id/main_tv_cuarto_precio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/price_zero"
+            android:textAlignment="textEnd"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/main_rb_medio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/item_detail_medio"
+            android:onClick="rbAction" />
+
+        <TextView
+            android:id="@+id/main_tv_medio_precio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/price_zero"
+            android:textAlignment="textEnd"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/main_rb_kilo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/item_detail_kilo"
+            android:onClick="rbAction" />
+
+        <TextView
+            android:id="@+id/main_tv_kilo_precio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/price_zero"
+            android:textAlignment="textEnd"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/main_iv_preview"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_rg_items"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/main_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_back"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/main_btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/btn_next" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
