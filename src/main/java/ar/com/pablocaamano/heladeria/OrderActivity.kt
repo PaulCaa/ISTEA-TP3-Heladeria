@@ -35,6 +35,10 @@ class OrderActivity : AppCompatActivity() {
 
         initializeElements();
 
+        finishBtn.setOnClickListener(View.OnClickListener {
+            utils.goToActivity(this,PaymentActivity::class.java,order);
+        });
+
         addBtn.setOnClickListener(View.OnClickListener {
             utils.goToActivity(this,MainActivity::class.java,order);
         });
@@ -55,7 +59,7 @@ class OrderActivity : AppCompatActivity() {
         title.text = t + " " + this.order.idOrder;
 
         itemsLayout = findViewById(R.id.order_rv_items);
-        itemsLayout.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false);
+        itemsLayout.layoutManager = LinearLayoutManager(this,LinearLayout.VERTICAL, false);
         itemsLayout.adapter = ItemsLayoutAdapter(items);
 
         totalOrder = findViewById(R.id.order_tv_total_value);
