@@ -131,7 +131,6 @@ class MainActivity : AppCompatActivity() {
                     order.iceCreams += prices["KILO"]!!;
                 }
             }
-            Toast.makeText(this,order.iceCreams.toString(),Toast.LENGTH_SHORT).show();
             // pasar a la siguiente activity
             utils.goToActivity(this,FlavorActivity::class.java,order);
         } catch (e: Exception) {
