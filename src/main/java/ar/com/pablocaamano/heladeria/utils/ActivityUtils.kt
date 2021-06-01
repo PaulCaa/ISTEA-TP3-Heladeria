@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat.startActivity
 import ar.com.pablocaamano.heladeria.model.Order
+import ar.com.pablocaamano.heladeria.model.RegisterSale
 
 class ActivityUtils {
 
@@ -18,4 +19,5 @@ class ActivityUtils {
         }
         startActivity(context,intent,null);
     }
+
 }

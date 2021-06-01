@@ -33,4 +33,6 @@
     <string name="order_btn_add">Agregar Producto</string>
     <string name="order_total">Total:</string>
     <string name="payment_method_title">Elija forma de pago</string>
+    <string name="final_title">¡Gracias por su compra!</string>
+    <string name="final_button">Volver a comprar</string>
 </resources>

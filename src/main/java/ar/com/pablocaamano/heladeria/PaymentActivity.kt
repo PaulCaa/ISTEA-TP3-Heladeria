@@ -60,7 +60,10 @@ class PaymentActivity : AppCompatActivity() {
 
         nextBtn.setOnClickListener(View.OnClickListener {
             if(this.boxValidation()){
-                this.registerSale();
+                if(this.registerSale()) {
+                    Toast.makeText(this,"Pago exitoso :D",Toast.LENGTH_SHORT).show();
+                    utils.goToActivity(this,FinalActivity::class.java,order)
+                } else Toast.makeText(this,"Fallo el pago :(",Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this,"La caja alcanzo el maximo de cobros, seleccione otra opcion",Toast.LENGTH_LONG).show();
             }
@@ -149,11 +152,8 @@ class PaymentActivity : AppCompatActivity() {
     }
 
     // Se graba compra asociado a la caja
-    private fun registerSale() {
-        if (register.idCaja != 9999) {
-            val result: Boolean = db.insert(register);
-            if(result) Toast.makeText(this,"Pago exitoso :D",Toast.LENGTH_SHORT).show();
-            else Toast.makeText(this,"Fallo el pago :(",Toast.LENGTH_SHORT).show();
-        }
+    private fun registerSale() : Boolean {
+        if (register.idCaja != 9999) return db.insert(register);
+        return false;
     }
 }
