@@ -15,7 +15,8 @@ class FinalActivity : AppCompatActivity() {
     private lateinit var order: Order;
 
     private lateinit var messaje: TextView;
-    private lateinit var newOrder: Button;
+    private lateinit var btnStatics: Button;
+    private lateinit var btnNewOrder: Button;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
@@ -23,14 +24,19 @@ class FinalActivity : AppCompatActivity() {
 
         initializeElements();
 
-        newOrder.setOnClickListener(View.OnClickListener {
+        btnStatics.setOnClickListener(View.OnClickListener {
+            utils.goToActivity(this,StaticsActivity::class.java,null);
+        });
+
+        btnNewOrder.setOnClickListener(View.OnClickListener {
             utils.goToActivity(this,MainActivity::class.java,null);
         });
     }
 
     private fun initializeElements() {
         messaje = findViewById(R.id.final_tv_descrip);
-        newOrder = findViewById(R.id.final_btn_new);
+        btnStatics = findViewById(R.id.final_btn_statics);
+        btnNewOrder = findViewById(R.id.final_btn_new);
 
         if(intent.getSerializableExtra("order") != null) {
             this.order = intent.getSerializableExtra("order") as Order;

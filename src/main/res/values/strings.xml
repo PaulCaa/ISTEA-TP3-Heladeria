@@ -35,4 +35,5 @@
     <string name="payment_method_title">Elija forma de pago</string>
     <string name="final_title">¡Gracias por su compra!</string>
     <string name="final_button">Volver a comprar</string>
+    <string name="final_btn_statics">Ver estadisticas</string>
 </resources>
