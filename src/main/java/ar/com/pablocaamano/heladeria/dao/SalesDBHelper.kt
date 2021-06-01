@@ -2,6 +2,7 @@ package ar.com.pablocaamano.heladeria.dao
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
@@ -16,17 +17,17 @@ class SalesDBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         private const val DATABASE_VERSION = 1;
 
         const val TABLE_SALES = "sales";
-        const val COLUMN_ID = "idCaja";
-        const val COLUMN_ORDER = "order";
-        const val COLUMN_PRICE = "price";
+        const val COLUMN_ID = "id_caja";
+        const val COLUMN_ORDER = "order_num";
+        const val COLUMN_PRICE = "price_order";
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
         val CREATE_TABLE = (
-                "CREATE TABLE $TABLE_SALES  (" +
+                "CREATE TABLE [$TABLE_SALES]  (" +
                         "$COLUMN_ID  INTEGER PRIMARY KEY," +
-                        "$COLUMN_ORDER TEXT," +
-                        "$COLUMN_PRICE NUMBER)"
+                        "$COLUMN_ORDER INTEGER," +
+                        "$COLUMN_PRICE REAL)"
                 );
         db?.execSQL(CREATE_TABLE);
     }
@@ -53,9 +54,30 @@ class SalesDBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
 
             Log.i("SalesDBHelper", "se registro operacion");
             result = true;
-        }  catch (e: Exception) {
+        } catch (e: Exception) {
             Log.e("SalesDBHelper",e.message.toString());
             result = false;
+        }
+        return result;
+    }
+
+    fun selectBy(id: Int) : List<RegisterSale> {
+        Log.i("SalesDBHelper", "buscando registros del id  ${id}");
+        val query = "SELECT ${COLUMN_ID},${COLUMN_ORDER},${COLUMN_PRICE} FROM ${TABLE_SALES} WHERE ${COLUMN_ID} = ${id}";
+        val result: MutableList<RegisterSale> = mutableListOf();
+        try{
+            val db = this.writableDatabase;
+            Log.i("SalesDBHelper", query);
+            val cursor: Cursor = db.rawQuery(query, null);
+            if(cursor.moveToFirst()) {
+                val resId = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
+                val resOrder = cursor.getInt(cursor.getColumnIndex(COLUMN_ORDER));
+                val resPrice = cursor.getInt(cursor.getColumnIndex(COLUMN_PRICE));
+                result.add(RegisterSale(resId,resOrder,resPrice.toFloat()));
+            }
+            Log.i("SalesDBHelper", "se obtuvieron  ${result.size} registros");
+        } catch (e: Exception) {
+            Log.e("SalesDBHelper",e.message.toString());
         }
         return result;
     }

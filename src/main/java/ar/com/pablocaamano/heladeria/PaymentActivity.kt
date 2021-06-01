@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import ar.com.pablocaamano.heladeria.dao.SalesDBHelper
 import ar.com.pablocaamano.heladeria.model.Order
 import ar.com.pablocaamano.heladeria.model.RegisterCash
 import ar.com.pablocaamano.heladeria.model.RegisterSale
@@ -14,10 +15,11 @@ class PaymentActivity : AppCompatActivity() {
 
     private val utils: ActivityUtils = ActivityUtils();
 
+    private val db: SalesDBHelper = SalesDBHelper(this,null);
+
     private lateinit var order: Order;
     private lateinit var cashBoxs: List<RegisterCash>;
     private lateinit var register: RegisterSale;
-
 
     private lateinit var cbCash: CheckBox;
     private lateinit var titleCash: TextView;
@@ -57,7 +59,11 @@ class PaymentActivity : AppCompatActivity() {
         });
 
         nextBtn.setOnClickListener(View.OnClickListener {
-           Toast.makeText(this,"listooooo!!",Toast.LENGTH_SHORT).show();
+            if(this.boxValidation()){
+                this.registerSale();
+            } else {
+                Toast.makeText(this,"La caja alcanzo el maximo de cobros, seleccione otra opcion",Toast.LENGTH_LONG).show();
+            }
         });
     }
 
@@ -131,5 +137,23 @@ class PaymentActivity : AppCompatActivity() {
         var total: Float = 0F;
         for(ic in o.iceCreams) total += ic.price;
         return total;
+    }
+
+    // Se valida que la caja no haya llegado al maximo de cobros
+    private fun boxValidation() : Boolean {
+        val result: List<RegisterSale> = db.selectBy(register.idCaja);
+        if(result.size < this.cashBoxs[register.idCaja-1].count) {
+            return true;
+        }
+        return false;
+    }
+
+    // Se graba compra asociado a la caja
+    private fun registerSale() {
+        if (register.idCaja != 9999) {
+            val result: Boolean = db.insert(register);
+            if(result) Toast.makeText(this,"Pago exitoso :D",Toast.LENGTH_SHORT).show();
+            else Toast.makeText(this,"Fallo el pago :(",Toast.LENGTH_SHORT).show();
+        }
     }
 }
